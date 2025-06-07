@@ -24,6 +24,12 @@ return {
   opts = {
     servers = {
       tsserver = {},
+      init_options = {
+        preferences = {
+          importModuleSpecifierPreference = "relative",
+          importModuleSpecifierEnding = "minimal",
+        },
+      },
     },
     setup = {
       tsserver = function(_, opts)
