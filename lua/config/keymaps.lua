@@ -1,9 +1,11 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
--- Replace telescope with fzf-lua
-local fzf = require("fzf-lua")
-vim.keymap.set("n", "<leader>pf", fzf.files, {})
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>pf", builtin.find_files, { desc = "Telescope find files" })
+vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Telescope live grep" })
+vim.keymap.set("n", "<leader>pb", builtin.buffers, { desc = "Telescope buffers" })
+vim.keymap.set("n", "<leader>ph", builtin.help_tags, { desc = "Telescope help tags" })
 -- vim.keymap.set("n", "<C-p>", builtin.git_files, {})
 -- vim.keymap.set("n", "<leader>ps", function()
 --   builtin.grep_string({ search = vim.fn.input("Grep > ") })
